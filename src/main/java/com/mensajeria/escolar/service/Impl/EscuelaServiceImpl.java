@@ -63,4 +63,9 @@ public class EscuelaServiceImpl implements EscuelaService {
     escuelaRepository.save(escuela);
 
     }
+
+    @Override
+    public Escuela verEscuela(Long id) {
+        return escuelaRepository.findById(id).orElse(null);
+    }
 }
