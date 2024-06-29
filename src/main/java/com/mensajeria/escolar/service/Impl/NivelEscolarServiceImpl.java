@@ -24,4 +24,9 @@ public class NivelEscolarServiceImpl implements NivelEscolarService {
     public void newNivelEscolarList(List<NivelEscolar> nivelEscolarList) {
         nivelEscolarRepository.saveAll(nivelEscolarList);
     }
+
+    @Override
+    public NivelEscolar verNivelEscolar(Long id) {
+        return nivelEscolarRepository.findById(id).orElse(null);
+    }
 }

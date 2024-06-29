@@ -3,6 +3,8 @@ package com.mensajeria.escolar.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -19,4 +21,7 @@ public class Curso {
 
     @ManyToOne(targetEntity = Anio.class)
     private Anio anio;
+
+    @ManyToMany(mappedBy = "cursos")
+    private List<Mensaje> mensajes;
 }

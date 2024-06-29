@@ -14,4 +14,9 @@ public class CursoServiceImpl implements CursoService {
     public void newCurso(Curso curso) {
         cursoRepository.save(curso);
     }
+
+    @Override
+    public Curso verCurso(Long id) {
+        return cursoRepository.findById(id).orElse(null);
+    }
 }

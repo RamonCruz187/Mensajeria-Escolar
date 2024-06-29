@@ -14,4 +14,9 @@ public class AnioServiceImpl implements AnioService {
     public void newAnio(Anio anio) {
         anioRepository.save(anio);
     }
+
+    @Override
+    public Anio verAnio(Long id) {
+        return anioRepository.findById(id).orElse(null);
+    }
 }
