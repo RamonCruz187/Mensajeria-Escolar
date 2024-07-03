@@ -12,17 +12,18 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/school")
 public class EscuelaController {
 
     private final EscuelaService escuelaService;
 
 
-    @PostMapping("/new/school")
+    @PostMapping("/new")
     public void newSchool(@RequestBody EscuelaRequestDto schoolDto){
         escuelaService.newEscuela(schoolDto);
     }
 
-    @GetMapping("/school/{id}")
+    @GetMapping("/{id}")
     public EscuelaResponseDto verEscuela(@PathVariable Long id){
         return new EscuelaResponseDto(escuelaService.verEscuela(id));
     }

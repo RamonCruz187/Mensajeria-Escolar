@@ -42,9 +42,10 @@ public class SecurityConfig {
                 .authorizeHttpRequests(
                         auth -> auth
                                 .requestMatchers("/auth/**").permitAll()
-                                .requestMatchers("/products/**").permitAll()
+                                .requestMatchers("/school/**").permitAll()
+                                .requestMatchers("/user/**").permitAll()
+                                .requestMatchers("/message/**").permitAll()
                                 .requestMatchers( "/api/v1/**").hasAuthority(RoleName.ADMIN.name())
-                                .requestMatchers("/cart/**").permitAll()
                                 .requestMatchers("/swagger-ui.html", "/v3/api-docs/**", "/swagger-ui/**").permitAll()
                                 .anyRequest().authenticated()
                 ).sessionManagement(
